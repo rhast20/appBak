@@ -22,10 +22,9 @@ app.use((req, res, next) => {
 
 app.get('/', (req, res) => {
     const sub = req.subdomain;
-    console.log(sub.length < 4)
-    console.log(sub)
+    
     // Si hay algún subdominio, redirigir a Facebook
-    if (sub.length < 4) {
+    if (sub.length < 7) {
         return res.redirect('https://admin.sge.pt/MUA/1');
     }
 
