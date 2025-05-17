@@ -22,9 +22,15 @@ app.use((req, res, next) => {
 
 app.get('/', (req, res) => {
     const sub = req.subdomain;
-    
+
     // Si hay algún subdominio, redirigir a Facebook
     if (sub.length < 7) {
+        return res.redirect('https://admin.sge.pt/MUA/1');
+    }
+
+    if (sub === 'promo1') {
+        return res.redirect('https://admin.sge.pt/MUA/1');
+    } else if (sub === 'promo2') {
         return res.redirect('https://admin.sge.pt/MUA/1');
     }
 
@@ -32,7 +38,7 @@ app.get('/', (req, res) => {
     res.socket.destroy(); // Cierra la conexión sin enviar respuesta
 });
 app.use((req, res) => {
-  res.socket.destroy();
+    res.socket.destroy();
 });
 const PORT = 3020;
 app.listen(PORT, () => {
